@@ -1,0 +1,15 @@
+<h1>Upload an image to extract text from</h1>
+
+
+<label>Image: <input type="file" (change)="imageChanged($event)" name="image"></label><br><br>
+
+<img style="max-width: 90vh; max-height: 50vh;" id="selected-img" [src]="imageSrc || 'http://placehold.it/180'" alt="img selected" />
+<br>
+<button style="margin-bottom: 1rem; margin-top: 1rem;" (click)="extractText()">Extract Text</button>
+
+<fieldset *ngIf="imageText">
+  <h4>Text extracted:</h4>
+  <p>{{ imageText }}</p>
+</fieldset>
+<br>
+<a routerLink=""><p>Go home</p></a>
